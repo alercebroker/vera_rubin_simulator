@@ -1,0 +1,7 @@
+version: "3"
+services:
+  correction:
+    build: .
+    environment:
+      - PRODUCER_TOPIC=vera-rubin-simulator
+      - PRODUCER_SERVER=${PRODUCER_SERVER}
