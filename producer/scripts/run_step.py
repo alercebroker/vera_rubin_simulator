@@ -18,7 +18,7 @@ logging.basicConfig(level=level,
                     datefmt='%Y-%m-%d %H:%M:%S',)
 
 
-from vera_rubin_simulator import VeraRubinSimulator
+from producer import ProducerSimulator
 from apf.core import get_class
 
 if "CLASS" in CONSUMER_CONFIG:
@@ -28,5 +28,5 @@ else:
 
 consumer = Consumer(config=CONSUMER_CONFIG)
 
-step = VeraRubinSimulator(consumer, config=STEP_CONFIG, level=level)
+step = ProducerSimulator(consumer, config=STEP_CONFIG, level=level)
 step.start()

@@ -1,0 +1,2 @@
+-e git+https://github.com/alercebroker/APF.git@feature/avro_simulator#egg=apf
+python-snappy

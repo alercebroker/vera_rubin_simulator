@@ -1,2 +1,0 @@
-apf_base
-python-snappy
