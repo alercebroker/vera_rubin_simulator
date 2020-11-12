@@ -44,7 +44,7 @@ services:
     environment:
       - DIRECTORY_PATH=/app/data/
       - PRODUCER_TOPIC=vera-rubin-simulator
-      - PRODUCER_SERVER=52.86.106.84:9092
+      - PRODUCER_SERVER=${kafka_private_ip}:${kafka_port}
 
   simulator_consumer:
     build: consumer
