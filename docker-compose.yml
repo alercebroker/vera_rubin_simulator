@@ -44,12 +44,7 @@ services:
     environment:
       - DIRECTORY_PATH=/app/data/
       - PRODUCER_TOPIC=vera-rubin-simulator
-      - PRODUCER_SERVER=kafka:9092
-    depends_on:
-      - kafka
-#    stdin_open: true
-#    tty: true
-#    command: /bin/bash
+      - PRODUCER_SERVER=52.86.106.84:9092
 
   simulator_consumer:
     build: consumer

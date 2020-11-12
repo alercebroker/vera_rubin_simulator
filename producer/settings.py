@@ -5,17 +5,19 @@ import os
 from VERA_RUBIN_SCHEMA import SCHEMA
 
 CONSUMER_CONFIG = {
-  "CLASS": "apf.consumers.AVROInfiniteConsumer",
-  "DIRECTORY_PATH": os.getenv("AVRO_PATH", "data/"),
+    "CLASS": "apf.consumers.AVROInfiniteConsumer",
+    "DIRECTORY_PATH": os.getenv("AVRO_PATH", "data/"),
 }
 
 PRODUCER_CONFIG = {
     "TOPIC": os.getenv("PRODUCER_TOPIC", "vera-rubin-simulator"),
     "PARAMS": {
-        'bootstrap.servers': os.getenv("PRODUCER_SERVER", "localhost:9092"),
-        'message.max.bytes': 8000000
+        "bootstrap.servers": os.getenv("PRODUCER_SERVER", "localhost:9092"),
+        "message.max.bytes": 8000000,
+        "linger.ms": 5,
+        "queue.buffering.max.kbytes": 2000000,
     },
-    "SCHEMA": SCHEMA
+    "SCHEMA": SCHEMA,
 }
 
 STEP_CONFIG = {
