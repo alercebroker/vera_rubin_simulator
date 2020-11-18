@@ -22,4 +22,5 @@ STEP_CONFIG = {
     "MESSAGES": os.getenv("MESSAGES", 10),
     "EXPOSURE_TIME": os.getenv("EXPOSURE_TIME", 30),
     "PROCESS_TIME": os.getenv("PROCESS_TIME", 60),
+    "SIZE_THRESHOLD": os.getenv("SIZE_THRESHOLD", 5)
 }
