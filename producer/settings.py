@@ -13,9 +13,6 @@ PRODUCER_CONFIG = {
     "TOPIC": os.getenv("PRODUCER_TOPIC", "vera-rubin-simulator"),
     "PARAMS": {
         "bootstrap.servers": os.getenv("PRODUCER_SERVER", "localhost:9092"),
-        "message.max.bytes": 8000000,
-        "linger.ms": 5,
-        "queue.buffering.max.kbytes": 2000000,
     },
     "SCHEMA": SCHEMA,
 }
