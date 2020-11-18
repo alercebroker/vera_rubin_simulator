@@ -45,6 +45,7 @@ services:
       - DIRECTORY_PATH=/app/data/
       - PRODUCER_TOPIC=vera-rubin-simulator
       - PRODUCER_SERVER=${kafka_private_ip}:${kafka_port}
+      - SIZE_THRESHOLD=1
 
   simulator_consumer:
     build: consumer

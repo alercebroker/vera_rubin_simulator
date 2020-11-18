@@ -4,6 +4,8 @@ import logging
 import time
 import sys
 
+MEGABYTE = 1e6
+
 
 # https://goshippo.com/blog/measure-real-size-any-python-object/
 def get_size(obj, seen=None):
@@ -54,6 +56,7 @@ class ProducerSimulator(GenericStep):
         self.process_time = float(config.get("PROCESS_TIME", 60))
         self.key = config.get("KEY", "alertId")
         self.start_time = time.time()
+        self.threshold = MEGABYTE * config.get("SIZE_THRESHOLD", 1)
 
     def produce(self):
         self.logger.info(f"Consumed {self.consumed}, producing")
@@ -86,4 +89,5 @@ class ProducerSimulator(GenericStep):
         self.consumed += 1
         if self.consumed == self.n_messages:
             self.produce()"""
-        self.producer.produce(message)
+        if self.threshold > get_size(message):
+            self.producer.produce(message)
